@@ -1,0 +1,25 @@
+<%- include('partial/ad_header') %>
+            <%- include('partial/sidebar') %>
+    <div class="content-wrapper">
+        <div class="container">
+        <h2>
+            <%= title %>
+        </h2>
+        <form action="/category-save" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="email" placeholder="Enter Name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="position">Position:</label>
+                <select class="form-control" aria-label="Default select example" name="position">
+                    <option value="0" selected>Cha</option>
+                    <option value="1">Con</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    </div>
+
+<%- include('partial/ad_footer') %>

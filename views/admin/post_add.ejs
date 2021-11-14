@@ -1,0 +1,49 @@
+<%- include('partial/ad_header') %>
+            <%- include('partial/sidebar') %>
+    <div class="content-wrapper">
+        <div class="container">
+        <h2>
+            <%= title %>
+        </h2>
+        <form action="/save" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="email" placeholder="Enter Name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="Category">Author:</label>
+                <select class="form-control" aria-label="Default select example" name="author">
+                    <!-- <option value="1" selected>Hao ManU</option>
+                    <option value="2">Quan ASE</option> -->
+                    <% add.forEach(function(add){ %>
+                        <option value="<%= add.u_id %>" selected><%= add.author %></option>
+                    <% }); %>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Category">Category:</label>
+                <select class="form-control" aria-label="Default select example" name="category">
+                    <option value="1" selected>Ngoại Hạng Anh</option>
+                    <option value="2">Bóng Đá Ý</option>
+                    <option value="3">Tây Ba Nha</option>
+                    <option value="4">Bóng Đá Đức</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input type="file" class="form-control" id="image" placeholder="image" name="image" required>
+            </div>
+            <div class="form-group">
+                <label for="summary">Summary</label>
+                <input type="text" class="form-control" id="summary" placeholder="summary" value="" name="summary" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea style="height: 200px;" class="form-control" id="content" placeholder="content" name="content" required ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    </div>
+
+<%- include('partial/ad_footer') %>

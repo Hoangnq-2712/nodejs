@@ -1,0 +1,112 @@
+<!-- <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="/dashboard">
+                    <span data-feather="home"></span>
+                    Dashboard <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/post">
+                    <span data-feather="file"></span>
+                    Danh Mục Bài Viết
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="post/add">
+                    <span data-feather="bar-chart-2"></span>
+                    Thêm bài viết
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admin-user">
+                    <span data-feather="users"></span>
+                    Người dùng
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin-category">
+                    <span data-feather="layers"></span>
+                    Danh mục giải đấu
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+ -->
+  <!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+      <img src="../upload/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">ADMIN</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="../../upload/<%= user.avatar %>" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block"><%= user.author %></a>
+        </div>
+      </div>
+
+
+      <!-- SidebarSearch Form -->
+      <!-- <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="/dashboard" class="nav-link">
+              <ion-icon name="home"></ion-icon>
+              <p>Trang Chủ</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/post" class="nav-link">
+              <ion-icon name="apps"></ion-icon>
+              <p>Danh mục bài viết</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="post/add" class="nav-link">
+              <ion-icon name="add-circle-outline"></ion-icon>
+              <p>Thêm bài viết</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="admin-user" class="nav-link">
+              <ion-icon name="contact"></ion-icon>
+              <p>Người dùng</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin-category" class="nav-link">
+              <ion-icon name="football"></ion-icon>
+              <p>Danh mục giải đấu</p>
+            </a>
+          </li>
+
+
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+
+    </div>
+    <!-- /.sidebar -->
+  </aside>

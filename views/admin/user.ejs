@@ -1,0 +1,36 @@
+<%- include('partial/ad_header') %>
+            <%- include('partial/sidebar') %>
+        <div class="content-wrapper">
+          <div class="container">
+            <h2><%= title %></h2>
+            <a href="/user/add" class="btn btn-sm btn-primary">Add User</a><br>
+            <br>
+            <table class="table table-dark table-striped">
+              <thead>
+                <tr>
+                  <th>STT</th>
+                  <th>username</th>
+                  <th>password</th>
+                  <th>Avatar</th>
+                  <th>author</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody><% var stt=0; %>
+                  <% users.forEach(function(users){ %>
+                      <tr>
+                          <td><%= stt++ %></td>
+                          <td><%= users.username %></td>
+                          <td><%= users.password %></td>
+                          <td><img src="/upload/<%= users.avatar %>" width="50" height="50"></td>
+                          <td><%= users.author %></td>
+                          <td>
+                              <a href="admin-user/edit/<%= users.u_id %>" class="btn btn-sm btn-primary">Edit</a>
+                          </td>
+                      </tr>
+                  <% }); %>
+              </tbody>
+            </table>
+          </div>
+          </div>
+<%- include('partial/ad_footer') %>
