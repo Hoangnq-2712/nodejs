@@ -12,10 +12,10 @@ const { v4: uuidv4 } = require('uuid');
 
 const mysql = require('mysql');
 const connection=mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'',
-    database:'node_soccer'
+    host:'mysql5037.site4now.net',
+    user:'a7c75f_haoit22',
+    password:'haoit221220@',
+    database:'db_a7c75f_haoit22'
 });
 
 connection.connect(function(error){
