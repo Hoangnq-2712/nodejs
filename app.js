@@ -11,7 +11,6 @@ const session = require('express-session');
 const { v4: uuidv4 } = require('uuid');
 
 const mysql = require('mysql');
-
 const connection=mysql.createPool({
     connectionLimit : 10,
     host:'mysql5037.site4now.net',
@@ -29,6 +28,7 @@ connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
     if (error) throw error;
     console.log('The solution is: ', results[0].solution);
   });
+
 
 //set views file
 app.set('views',path.join(__dirname,'views'));
@@ -164,6 +164,7 @@ app.use(session({
     saveUninitialized: true
 }))
 
+
 const hao = {
     email: 'oussama@gmail.com',
     password: 'ad123'
@@ -251,7 +252,7 @@ app.get('/signout', function (req, res) {
 
 app.get('/post',(req, res) => {
 
-    let sql = "SELECT * FROM articles";
+    let sql = "SELECT articles.id, articles.name,categories.name as category,users.author,articles.image,articles.summary FROM articles,users,categories WHERE articles.user_id=users.u_id and articles.category_id=categories.id;";
     let query = connection.query(sql, (err, rows) => {
         if(err) throw err;
         res.render('admin/post_index', {
@@ -282,7 +283,6 @@ app.get('/post/add',(req, res) => {
 
  
 app.post('/save',(req, res) => { 
-    
     let data = {name: req.body.name, category_id: req.body.category, user_id: req.body.author, image: req.body.image, summary: req.body.summary, content: req.body.content};
     let sql = "INSERT INTO articles SET ?";
     let query = connection.query(sql, data,(err, results) => {
@@ -450,8 +450,14 @@ app.post('/user-save',(req, res) => {
     });
 });
 
-
-
+app.get('/user/delete/:userId',(req, res) => {
+    const userId = req.params.userId;
+    let sql = `DELETE from users where u_id = ${userId}`;
+    let query = connection.query(sql,(err, result) => {
+        if(err) throw err;
+        res.redirect('/admin-user');
+    });
+});
 
 
 
@@ -460,6 +466,5 @@ const PORT =process.env.PORT || 8000;
 app.listen(PORT, () => {
     console.log('Server is running');
 });
-
 
 //nodemon app (OR) npm start
