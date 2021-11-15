@@ -20,10 +20,10 @@ const connection=mysql.createPool({
 });
 connection.query('select 1 + 1', (err, rows) => { /* */ });
 
-connection.connect(function(error){
-    if(!!error) console.log(error);
-    else console.log('Database Connected!');
-}); 
+// connection.connect(function(error){
+//     if(!!error) console.log(error);
+//     else console.log('Database Connected!');
+// }); 
 
 
 //set views file
