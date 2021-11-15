@@ -6,23 +6,23 @@
             <%= title %>
         </h2>
 
-        <form action="/user_add" method="post" >
-            <input type="hidden" value="<%= user.u_id %>" name="id">
+        <form action="/user-up" method="post" >
+            <input type="hidden" value="<%= user_edit.u_id %>" name="id">
             <div class="form-group">
                 <label for="name">Username:</label>
-                <input type="email" class="form-control" id="username" placeholder="Enter username" value="<%= user.username %>" name="username" required>
+                <input type="email" class="form-control" id="username" placeholder="Enter username" value="<%= user_edit.username %>" name="username" required>
             </div>
             <div class="form-group">
                 <label for="name">Password:</label>
-                <input type="text" class="form-control" id="password" placeholder="Enter password" value="<%= user.password %>" name="password" required>
+                <input type="text" class="form-control" id="password" placeholder="Enter password" value="<%= user_edit.password %>" name="password" required>
             </div>
             <div class="form-group">
                 <label for="image">Avatar:</label>
-                <input type="file" class="form-control" id="avatar" placeholder="Enter Avatar" value="<%= user.avatar %>" name="avatar" required>
+                <input type="file" class="form-control" id="avatar" placeholder="Enter Avatar" value="<%= user_edit.avatar %>" name="avatar" required>
             </div>
             <div class="form-group">
                 <label for="author">Author</label>
-                <input type="text" class="form-control" id="author" placeholder="author" value="<%= user.author %>" name="author" required>
+                <input type="text" class="form-control" id="author" placeholder="author" value="<%= user_edit.author %>" name="author" required>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

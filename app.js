@@ -30,6 +30,7 @@ connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
   });
 
 
+
 //set views file
 app.set('views',path.join(__dirname,'views'));
 
@@ -413,14 +414,13 @@ app.get('/admin-user',(req, res) => {
     // });
 });
 app.get('/admin-user/edit/:userId',(req, res) => {
-
     const userId = req.params.userId;
     let sql = `Select * from users where u_id = ${userId}`;
     let query = connection.query(sql,(err, result) => {
         if(err) throw err;
         res.render('admin/user_edit', {
             title : 'Chi tiết người dùng',
-            user : result[0],
+            user_edit : result[0],
             user : req.session.log
         });
     });
