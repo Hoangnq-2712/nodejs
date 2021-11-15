@@ -11,12 +11,14 @@ const session = require('express-session');
 const { v4: uuidv4 } = require('uuid');
 
 const mysql = require('mysql');
-const connection=mysql.createConnection({
+
+const connection=mysql.createPool({
     host:'mysql5037.site4now.net',
     user:'a7c75f_haoit22',
     password:'haoit221220@',
     database:'db_a7c75f_haoit22'
 });
+connection.query('select 1 + 1', (err, rows) => { /* */ });
 
 connection.connect(function(error){
     if(!!error) console.log(error);
@@ -443,6 +445,7 @@ app.post('/user-save',(req, res) => {
       res.redirect('/admin-user');
     });
 });
+
 
 
 
